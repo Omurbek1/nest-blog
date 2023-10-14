@@ -1,17 +1,17 @@
 version: '3'
+
 services:
-   db:
+  db:
     container_name: postgres
     image: postgres:9.6
     ports:
-      -${DATABASE_PORT}:5432
+      - ${DATABASE_PORT}:5432
     environment:
-      POSGRES_USER:${DATABASE_USER}
-      POSGRES_PASSWD:${DATABASE_PASSWORD}
-      POSGRES_DB:${DATABASE_DB}
-      
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_DB}
     volumes:
-      -./pgdata:/var/lib/postgresql/data
+      - ./pgdata:/Library/PostgreSQL/15/data
 
 volumes:
-      pgdata
+  pgdata:
